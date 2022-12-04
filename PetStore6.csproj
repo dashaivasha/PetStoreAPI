@@ -19,4 +19,16 @@
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="100.0.4896.6000" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="TestData\Order.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\Pet.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\TestData.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
