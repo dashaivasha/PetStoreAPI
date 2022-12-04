@@ -1,4 +1,6 @@
-﻿using PetStore6.Api.Models;
+﻿using Newtonsoft.Json;
+using PetStore6.Api.Models;
+using System.IO;
 
 namespace PetStore6.TestData
 {
@@ -6,21 +8,24 @@ namespace PetStore6.TestData
     {
         public static TestDetails GetTestData()
         {
-            var data = DataSerializer.JsonDeserialize(typeof(TestDetails), Globals.DataPath) as TestDetails;
+            var json = File.ReadAllText(Globals.DataPath);
+            var data = JsonConvert.DeserializeObject<TestDetails>(json);
 
             return data;
         }
 
         public static Pet GetPetFromJson()
         {
-            Pet pet = DataSerializer.JsonDeserialize(typeof(Pet), Globals.PetPath) as Pet;
+            var json = File.ReadAllText(Globals.PetPath);
+            Pet pet = JsonConvert.DeserializeObject<Pet>(json);
 
             return pet;
         }
 
         public static Order GetOrderFromJson()
         {
-            Order order = DataSerializer.JsonDeserialize(typeof(Order), Globals.OrderPath) as Order;
+            var json = File.ReadAllText(Globals.OrderPath);
+            Order order = JsonConvert.DeserializeObject<Order>(json);
 
             return order;
         }
