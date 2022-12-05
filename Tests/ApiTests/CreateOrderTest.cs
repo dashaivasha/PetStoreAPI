@@ -12,12 +12,5 @@ namespace PetStore6.Tests.ApiTests
             var foundOrder = orderService.GetOrder(Order.Id).Result;
             Assert.IsTrue(Order == foundOrder);
         }
-
-        [Test]
-        public void CreatetOrderWithNonexistentPet()
-        {
-            petService.DeletePet(Pet.Id);
-            Assert.AreEqual(HttpStatusCode.BadRequest, orderService.PostOrder(Order).StatusCode);
-        }
     }
 }
