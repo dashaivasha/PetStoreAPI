@@ -12,7 +12,7 @@ namespace PetStore6.Api.Client
             get
             {
                 if (_httpClient == null)
-                    throw new NullReferenceException("The HttpClient instance was not initialize. You should call the metod InitilizerHttpClient()!");
+                    throw new NullReferenceException("The HttpClient instance was not initialize. You should call the metod InitilizerHttpClient()!!");
                 return _httpClient;
             }
             set
